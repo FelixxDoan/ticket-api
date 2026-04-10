@@ -1,0 +1,22 @@
+services:
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongo_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-admin}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-password}
+      MONGO_INITDB_DATABASE: ${MONGO_DB_NAME:-ticket}
+    ports:
+      - "27017:27017"
+    volumes:
+      - data-ticket:/data/db 
+  ticket:
+    image: tiket:dev 
+    container_name: ticket
+    environment:
+      PORT: "3000"
+      MONGODB_URI: "mongodb://admin:password@mongodb:27017/ticket?authSource=admin"
+
+volumes:
+  data-ticket:
