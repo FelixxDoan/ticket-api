@@ -1,47 +1,57 @@
-# Support Ticket API
+# 🎫 Support Ticket API
+
+![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![Express](https://img.shields.io/badge/Express-API-black)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green)
+![JWT](https://img.shields.io/badge/JWT-Auth-orange)
+![Swagger](https://img.shields.io/badge/Swagger-Docs-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-Container-blue)
+![Vitest](https://img.shields.io/badge/Vitest-Testing-yellow)
 
 A backend API for managing customer support tickets with authentication, role-based access control, ticket assignment, status updates, comments, Swagger documentation, and Docker support.
 
-## Tech Stack
+---
 
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- Swagger OpenAPI
-- Morgan
-- Docker / Docker Compose
-- Vitest + Supertest
+## 🚀 Tech Stack
 
-## Project Overview
+- **Node.js**
+- **Express.js**
+- **MongoDB + Mongoose**
+- **JWT Authentication**
+- **Swagger OpenAPI**
+- **Morgan**
+- **Docker / Docker Compose**
+- **Vitest + Supertest**
+
+## 📌 Project Overview
 
 This project helps teams manage customer support requests through a simple ticket workflow.
 
-Main capabilities:
-- users can register and log in
-- customers can create tickets
-- staff and admin can view and manage tickets
-- admin can assign tickets to staff
-- staff/admin can update ticket status
-- users can add comments to tickets
-- API documentation is available through Swagger
+### Main capabilities
+- 👤 users can register and log in
+- 🎟️ customers can create tickets
+- 🛠️ staff and admin can view and manage tickets
+- 📍 admin can assign tickets to staff
+- 🔄 staff/admin can update ticket status
+- 💬 users can add comments to tickets
+- 📚 API documentation is available through Swagger
 
-## Main Features
+## ✨ Main Features
 
-- User registration and login
-- JWT-based authentication
-- Role-based access control
-- Customer ticket creation
-- Ticket listing and detail view
-- Ticket assignment
-- Ticket status update
-- Ticket comments
-- Health check endpoint
-- Swagger API docs
-- Dockerized local setup
-- Basic automated tests
+- 🔐 User registration and login
+- 🪪 JWT-based authentication
+- 👥 Role-based access control
+- 📝 Customer ticket creation
+- 📂 Ticket listing and detail view
+- 👨‍💼 Ticket assignment
+- 🔄 Ticket status update
+- 💬 Ticket comments
+- ❤️ Health check endpoint
+- 📘 Swagger API docs
+- 🐳 Dockerized local setup
+- ✅ Basic automated tests
 
-## Roles
+## 👥 Roles
 
 ### Customer
 - register / login
@@ -59,7 +69,7 @@ Main capabilities:
 - assign tickets to staff
 - manage ticket workflow
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```bash
 .
@@ -80,7 +90,7 @@ Main capabilities:
 └── vitest.config.js
 ```
 
-## API Overview
+## 🛣️ API Overview
 
 ### Auth
 - `POST /auth/register`
@@ -104,7 +114,7 @@ Main capabilities:
 - `GET /healthz`
 - `GET /api-docs`
 
-## Environment Variables
+## ⚙️ Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -119,37 +129,7 @@ JWT_SECRET=your_jwt_secret
 - `MONGODB_URI`: MongoDB connection string
 - `JWT_SECRET`: secret key for JWT signing
 
-## Local Setup
-
-### 1. Clone repository
-```bash
-git clone https://github.com/FelixxDoan/ticket-api.git
-cd ticket-api
-```
-
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Configure environment variables
-Create a `.env` file based on the example above.
-
-### 4. Make sure MongoDB is running
-You need a running MongoDB instance before starting the API.
-
-### 5. Start development server
-```bash
-npm run dev
-```
-
-## Run with Docker
-
-```bash
-docker compose up --build
-```
-
-## Available Scripts
+## 🧪 Available Scripts
 
 ```bash
 npm run dev
@@ -158,45 +138,27 @@ npm run test
 npm run test:watch
 ```
 
-## Seed Users
-
-This project includes a seed script for creating predefined test accounts for local authentication and RBAC testing.
-
-### Prerequisites
-- MongoDB is running
-- `.env` file is configured
-- `MONGODB_URI` is set correctly
-
-### Run seed script
-```bash
-npm run seed
-```
-
-## API Documentation
-
-After the server starts, Swagger docs are available at:
+## 🐳 Run with Docker
 
 ```bash
-http://localhost:3000/api-docs
+docker compose up --build
 ```
 
-## Health Check
+## 📚 API Documentation
 
-Health check endpoint:
+- Swagger: `http://localhost:3000/api-docs`
 
-```bash
-http://localhost:3000/healthz
+## ❤️ Health Check
+
+- Health check: `http://localhost:3000/healthz`
+
+## 🔄 Basic Workflow
+
+```text
+Register/Login → Create Ticket → Assign Ticket → Update Status → Comment → Resolve
 ```
 
-## Basic Workflow
-
-1. Register or log in
-2. Customer creates a ticket
-3. Admin assigns the ticket to a staff member
-4. Staff/admin updates ticket status
-5. Users communicate through comments
-
-## Notes
+## 📝 Notes
 
 - Protected routes require a Bearer token
 - MongoDB connection is required before the server starts
